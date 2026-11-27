@@ -119,8 +119,7 @@ with t1:
 # ---------------- Tópicos ----------------
 with t2:
     st.caption(
-        "Tópicos obtenidos con una reejecución de BERTopic con semilla fija sobre el subcorpus de ciencia "
-        "(τ = 0,47). Conserva los ejes temáticos del artículo, aunque su agrupación difiere de la Tabla 11. "
+        "Tópicos obtenidos con BERTopic sobre el subcorpus de ciencia "
         "Haz clic en una barra para ver el detalle del tópico."
     )
     cnt = frag_c.groupby("topico").size().rename("n").reset_index()
@@ -179,7 +178,7 @@ with t3:
 
     st.caption(
         "Menciones en todo el corpus filtrado frente a menciones en fragmentos de ciencia, ordenadas por "
-        "frecuencia en ciencia. Con los valores por defecto se aplica el criterio del artículo (razón ≥ 30 %). "
+        "frecuencia en ciencia. "
         "Selecciona una fila para ver los fragmentos donde aparece."
     )
     sel = st.dataframe(
@@ -259,7 +258,7 @@ with t4:
         g2.plotly_chart(fig_b, use_container_width=True)
 
         st.caption(
-            "Una columna cuenta como «con ciencia» si tiene al menos un fragmento clasificado como mención de "
+            "Una columna cuenta como \"con ciencia\" si tiene al menos un fragmento clasificado como mención de "
             "ciencia con los filtros actuales. Selecciona una fila o haz clic en un punto del gráfico para ver "
             "los fragmentos del autor."
         )
